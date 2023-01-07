@@ -4,17 +4,32 @@
     box-sizing: border-box;
 }
 
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --suface-color: rgba(255, 255, 255, 0.05);
+    --suface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1)
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color:rgba(0 , 0, 0, 0.5);
+    --suface-color: rgba(0, 0, 0, 0.05);
+    --suface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1)
+}
+
 
 body {
-    background-image: url(./assets/bg-mobile.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
+    background: var(--bg-url) no-repeat top center/cover;
 }
 
 body * {
     font-family: 'Inter', sans-serif;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 
@@ -58,8 +73,8 @@ ul li a {
 
     padding: 16px 24px;
 
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: var(--suface-color);
+    border: 1px solid var(--stroke-color);
     border-radius: 8px;
 
     backdrop-filter: blur(4px);
@@ -73,9 +88,8 @@ ul li a {
 
 /* pseudo-selector*/
 ul li a:hover {
-
-    background: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid #ffffff;
+    background: var(--suface-color-hover);
+    border: 1.5px solid var(--text-color)
 }
 
 
@@ -104,8 +118,7 @@ ul li a:hover {
 
 
 #social-links a:hover{
-    background: rgba(255, 255, 255, 0.2);
-    padding: 16px;
+    background: var(--highlight-color);
 }
 
 
